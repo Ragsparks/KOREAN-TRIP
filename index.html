@@ -1,0 +1,974 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ruben & Leta: Korea Wedding & Family Trip 2026</title>
+    <meta name="description" content="Interactive bilingual itinerary, day trip suggestions, vehicle allocator, and travel tips for our upcoming wedding trip to South Korea (September 26 - October 4, 2026).">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:wght@200..800&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Top-Right Controls -->
+    <div class="control-panel">
+        <button id="langToggleBtn" class="lang-toggle-btn" aria-label="Toggle language">🇬🇧 EN / ES</button>
+        <div class="theme-switch-container">
+            <button id="themeToggleBtn" aria-label="Toggle dark and light mode" class="theme-toggle-btn">
+                <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707-.707m12.728 0l-.707.707M6.343 6.364l-.707-.707M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                </svg>
+                <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+                </svg>
+            </button>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="hero-bg-overlay"></div>
+        <div class="hero-content">
+            <span class="hero-subtitle">September 26 – October 4, 2026</span>
+            <h1 class="hero-title">
+                <span class="lang-en">Our Wedding Journey</span>
+                <span class="lang-es">Nuestro Viaje de Boda</span>
+            </h1>
+            <p class="hero-description">Seoul • Ulsan • Gyeongju • Busan</p>
+            <p class="hero-description" style="font-size: 1rem; margin-top: -1.5rem; opacity: 0.8; font-family: var(--font-heading);">
+                Ruben & Leta
+            </p>
+            
+            <!-- Countdown Widget -->
+            <div id="countdown" class="countdown-container">
+                <div class="countdown-item">
+                    <span id="days" class="countdown-number">00</span>
+                    <span class="countdown-label lang-en">Days</span>
+                    <span class="countdown-label lang-es">Días</span>
+                </div>
+                <div class="countdown-item">
+                    <span id="hours" class="countdown-number">00</span>
+                    <span class="countdown-label lang-en">Hours</span>
+                    <span class="countdown-label lang-es">Horas</span>
+                </div>
+                <div class="countdown-item">
+                    <span id="minutes" class="countdown-number">00</span>
+                    <span class="countdown-label lang-en">Mins</span>
+                    <span class="countdown-label lang-es">Minutos</span>
+                </div>
+                <div class="countdown-item">
+                    <span id="seconds" class="countdown-number">00</span>
+                    <span class="countdown-label lang-en">Secs</span>
+                    <span class="countdown-label lang-es">Segundos</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation Tabs -->
+    <nav class="sticky-nav">
+        <div class="nav-container">
+            <button class="nav-tab active" data-tab="itinerary">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="nav-icon">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                </svg>
+                <span class="lang-en">Itinerary</span>
+                <span class="lang-es">Itinerario</span>
+            </button>
+            <button class="nav-tab" data-tab="daytrips">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="nav-icon">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7" />
+                </svg>
+                <span class="lang-en">Day Trips</span>
+                <span class="lang-es">Excursiones</span>
+            </button>
+            <button class="nav-tab" data-tab="vehicles">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="nav-icon">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
+                </svg>
+                <span class="lang-en">Car Allocator</span>
+                <span class="lang-es">Distribución de Coches</span>
+            </button>
+            <button class="nav-tab" data-tab="travelinfo">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="nav-icon">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                </svg>
+                <span class="lang-en">Tips & Vegetarian</span>
+                <span class="lang-es">Consejos y Vegetariano</span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-container">
+        
+        <!-- SECTION: ITINERARY -->
+        <section id="itinerary" class="tab-content active">
+            <div class="section-header">
+                <h2 class="lang-en">Our Day-by-Day Journey</h2>
+                <h2 class="lang-es">Nuestro Itinerario Día a Día</h2>
+                <p class="section-lead lang-en">A seamless timeline of flights, transfers, family reunions, and our big wedding celebration in Ulsan.</p>
+                <p class="section-lead lang-es">Una cronología detallada de vuelos, traslados, reuniones familiares y nuestra gran boda en Ulsan.</p>
+            </div>
+
+            <div class="timeline">
+                <!-- Day 1 -->
+                <div class="timeline-day-card" data-day="1">
+                    <div class="day-badge">Day 1</div>
+                    <div class="day-header">
+                        <div class="day-title-area">
+                            <span class="day-date">Sep 26 (Saturday)</span>
+                            <h3 class="lang-en">Arrival in Seoul</h3>
+                            <h3 class="lang-es">Llegada a Seúl</h3>
+                        </div>
+                        <div class="group-pill group-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="inline-icon"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1z" /></svg>
+                            <span class="lang-en">Group of 4</span>
+                            <span class="lang-es">Grupo de 4</span>
+                        </div>
+                        <button class="accordion-toggle" aria-label="Toggle Details"></button>
+                    </div>
+                    <div class="day-body">
+                        <div class="itinerary-grid">
+                            <div class="time-block">
+                                <div class="time">17:00</div>
+                                <div class="event-details">
+                                    <h4 class="lang-en">Land at Incheon International Airport (ICN)</h4>
+                                    <h4 class="lang-es">Aterrizaje en el Aeropuerto de Incheon (ICN)</h4>
+                                    <p class="lang-en">Ruben, Leta, and Ruben's Parents land in Korea! Proceed through immigration, collect bags, and get pre-booked SIM cards</p>
+                                    <p class="lang-es">¡Rubén, Leta y los padres de Rubén aterrizan en Corea! Pasan por inmigración y recogen maletas (comprar SIM card online con Leta)</p>
+                                </div>
+                            </div>
+                            <div class="time-block">
+                                <div class="time">18:30</div>
+                                <div class="event-details">
+                                    <h4 class="lang-en">Transfer to Seoul Hotel (L'Escape Hotel)</h4>
+                                    <h4 class="lang-es">Traslado al Hotel en Seúl (L'Escape Hotel)</h4>
+                                    <p class="lang-en">Travel to the Parisian-themed premium <a href="https://maps.app.goo.gl/6L7kEnPVfFF2EXbP8" target="_blank">L'Escape Hotel</a>. You can take the AREX Express Train to Seoul Station, followed by a quick taxi, or book a private jumbo taxi directly from the airport.</p>
+                                    <p class="lang-es">Viaje al premium y tematizado al estilo parisino <a href="https://maps.app.goo.gl/6L7kEnPVfFF2EXbP8" target="_blank">L'Escape Hotel</a>. Se puede tomar el tren AREX Express a la estación de Seúl y luego un taxi rápido, o reservar un taxi jumbo privado directo desde el aeropuerto.</p>
+                                </div>
+                            </div>
+                            <div class="time-block">
+                                <div class="time">20:00</div>
+                                <div class="event-details">
+                                    <h4 class="lang-en">Check-in & Welcoming Dinner</h4>
+                                    <h4 class="lang-es">Check-in y Cena de Bienvenida</h4>
+                                    <p class="lang-en">Check into L'Escape Hotel. Have a light, warm dinner nearby like <em>Kalguksu</em> (Korean knife-cut noodles) or mild chicken soup to recover from the long flight.</p>
+                                    <p class="lang-es">Registro en L'Escape Hotel. Cena ligera y reconfortante cerca, como <em>Kalguksu</em> (tallarines coreanos cortados a cuchillo) o sopa suave de pollo para recuperarse del largo vuelo.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="day-tip">
+                            <strong>💡 <span class="lang-en">Travel Tip:</span><span class="lang-es">Consejo de Viaje:</span></strong> 
+                            <span class="lang-en">Download <strong>Naver Map</strong> and <strong>Kakao T</strong> (taxi app) before landing. Google Maps does not give walking directions in Korea.</span>
+                            <span class="lang-es">Descarga <strong>Naver Map</strong> y <strong>Kakao T</strong> (app de taxis) antes de aterrizar. Google Maps no da indicaciones a pie en Corea.</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Day 2 -->
+                <div class="timeline-day-card" data-day="2">
+                    <div class="day-badge">Day 2</div>
+                    <div class="day-header">
+                        <div class="day-title-area">
+                            <span class="day-date">Sep 27 (Sunday)</span>
+                            <h3 class="lang-en">Sightseeing & Skincare in Seoul</h3>
+                            <h3 class="lang-es">Turismo y Skincare en Seúl</h3>
+                        </div>
+                        <div class="group-pill group-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="inline-icon"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1z" /></svg>
+                            <span class="lang-en">Group of 4</span>
+                            <span class="lang-es">Grupo de 4</span>
+                        </div>
+                        <button class="accordion-toggle" aria-label="Toggle Details"></button>
+                    </div>
+                    <div class="day-body">
+                        <div class="itinerary-grid">
+                            <div class="time-block">
+                                <div class="time">09:30</div>
+                                <div class="event-details">
+                                    <h4 class="lang-en">Gyeongbokgung Palace Tour</h4>
+                                    <h4 class="lang-es">Visita al Palacio Gyeongbokgung</h4>
+                                    <p class="lang-en">Visit the primary royal palace of the Joseon Dynasty. Walk the majestic grounds and watch the Royal Guard Changing Ceremony at the main Gwanghwamun gate.</p>
+                                    <p class="lang-es">Visita al palacio real principal de la dinastía Joseon. Recorre sus majestuosos terrenos y observa la ceremonia de cambio de guardia en la puerta principal de Gwanghwamun.</p>
+                                </div>
+                            </div>
+                            <div class="time-block">
+                                <div class="time">12:30</div>
+                                <div class="event-details">
+                                    <h4 class="lang-en">Lunch in Insadong Traditional Village</h4>
+                                    <h4 class="lang-es">Almuerzo en Insadong</h4>
+                                    <p class="lang-en">Explore Insadong's tea houses and craft shops. 
+                                        <br><strong>🌱 Sister-Vegetarian Pick:</strong> Dine at <strong>Osegyehyang</strong>, a legendary 100% vegan traditional Korean restaurant hidden in an elegant Hanok alley (highly recommended for delicious vegan dumplings and noodles!).
+                                    </p>
+                                    <p class="lang-es">Explora las teterías y tiendas de artesanía de Insadong. 
+                                        <br><strong>🌱 Opción Vegetariana:</strong> Almuerzo en <strong>Osegyehyang</strong>, un legendario restaurante tradicional coreano 100% vegano escondido en un callejón Hanok (muy recomendado para probar dumplings y fideos veganos deliciosos).
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="time-block">
+                                <div class="time">15:00</div>
+                                <div class="event-details">
+                                    <h4 class="lang-en">Skincare Clinic Appointment (Myeongdong)</h4>
+                                    <h4 class="lang-es">Cita en Clínica de Skincare (Myeongdong)</h4>
+                                    <p class="lang-en">Head to Myeongdong for a premium Korean skincare experience. Ruben's Mom and Leta can check in for custom facial treatments (hydration, peeling, or laser clinics like Lienjang or ToxnFill). Ruben and Dad can walk around Myeongdong's shopping streets or grab a coffee nearby.</p>
+                                    <p class="lang-es">Dirección a Myeongdong para una experiencia premium de cuidado de la piel coreana (skincare). La madre de Rubén y Leta pueden realizarse tratamientos faciales personalizados (hidratación, peeling o láser en clínicas populares como Lienjang o ToxnFill). Rubén y su padre pueden pasear por las calles comerciales de Myeongdong o tomar un café cerca.</p>
+                                </div>
+                            </div>
+                            <div class="time-block">
+                                <div class="time">18:30</div>
+                                <div class="event-details">
+                                    <h4 class="lang-en">N Seoul Tower (Namsan) Sunset</h4>
+                                    <h4 class="lang-es">Atardecer en N Seoul Tower (Namsan)</h4>
+                                    <p class="lang-en">Ride the cable car up Namsan Mountain. Witness the spectacular evening sunset and view the glittering skyline of Seoul. Have a relaxed dinner near the hotel.</p>
+                                    <p class="lang-es">Sube en teleférico al monte Namsan. Disfruta del espectacular atardecer y de las vistas del skyline iluminado de Seúl. Cena relajada cerca del hotel.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Day 3 -->
+                <div class="timeline-day-card" data-day="3">
+                    <div class="day-badge">Day 3</div>
+                    <div class="day-header">
+                        <div class="day-title-area">
+                            <span class="day-date">Sep 28 (Monday)</span>
+                            <h3 class="lang-en">Han River Picnic & Sisters Reunion</h3>
+                            <h3 class="lang-es">Picnic en el Río Han y Reunión Familiar</h3>
+                        </div>
+                        <div class="group-pill group-7">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="inline-icon"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" /></svg>
+                            <span class="lang-en">Group of 7 (Evening)</span>
+                            <span class="lang-es">Grupo de 7 (Tarde/Noche)</span>
+                        </div>
+                        <button class="accordion-toggle" aria-label="Toggle Details"></button>
+                    </div>
+                    <div class="day-body">
+                        <div class="itinerary-grid">
+                            <div class="time-block">
+                                <div class="time">11:00</div>
+                                <div class="event-details">
+                                    <h4 class="lang-en">Yeouido Hangang Park Picnic</h4>
+                                    <h4 class="lang-es">Picnic en Yeouido Hangang Park</h4>
+                                    <p class="lang-en">Spend the day until 17:00 at Yeouido Han River Park. Enjoy a classic Seoul leisure day: rent a picnic mat, buy hot instant ramen from the convenience store cooked on automated machines, eat Korean fried chicken, and relax by the water.</p>
+                                    <p class="lang-es">Pasa el día hasta las 17:00 en el parque del río Han en Yeouido. Disfruta de un clásico día de ocio de Seúl: alquila una esterilla de picnic, compra ramen instantáneo caliente en la tienda de conveniencia cocinado en máquinas automáticas, come pollo frito coreano y relájate frente al agua.</p>
+                                </div>
+                            </div>
+                            <div class="time-block">
+                                <div class="time">17:00</div>
+                                <div class="event-details">
+                                    <h4 class="lang-en">Sisters Land at Incheon Airport</h4>
+                                    <h4 class="lang-es">Aterrizaje de las Hermanas en Incheon</h4>
+                                    <p class="lang-en">Ruben's two sisters and one boyfriend land at ICN around 17:00. They clear immigration, grab bags, and travel to Seoul hotel.</p>
+                                    <p class="lang-es">Las dos hermanas y el novio de Rubén aterrizan en ICN sobre las 17:00. Pasan inmigración, recogen maletas y se dirigen al hotel en Seúl.</p>
+                                </div>
+                            </div>
+                            <div class="time-block">
+                                <div class="time">19:00</div>
+                                <div class="event-details">
+                                    <h4 class="lang-en">Family Reunion at L'Escape Hotel</h4>
+                                    <h4 class="lang-es">Reunión Familiar en L'Escape Hotel</h4>
+                                    <p class="lang-en">The sisters and boyfriend arrive at L'Escape Hotel to join the main family group. Drop bags and freshen up.</p>
+                                    <p class="lang-es">Las hermanas y el novio llegan a L'Escape Hotel para unirse al grupo familiar. Dejan maletas y se refrescan.</p>
+                                </div>
+                            </div>
+                            <div class="time-block">
+                                <div class="time">19:30</div>
+                                <div class="event-details">
+                                    <h4 class="lang-en">Family Dinner & Reunion</h4>
+                                    <h4 class="lang-es">Cena de Reunión Familiar</h4>
+                                    <p class="lang-en">Celebrate being together! Go to a premium Korean restaurant nearby.
+                                        <br><strong>🌱 Sister-Vegetarian Tip:</strong> Korean BBQ places often have pork/beef only. We recommend **Maple Tree House** (Myeongdong), which offers vegetarian-friendly tofu options and abundant vegetable side dishes (banchan), or a traditional Hanok dining option with vegetarian stews.
+                                    </p>
+                                    <p class="lang-es">¡Celebración familiar por estar todos juntos! Cena en un restaurante de calidad cercano.
+                                        <br><strong>🌱 Opción Vegetariana:</strong> Las barbacoas tradicionales suelen ser solo carne. Recomendamos **Maple Tree House** (Myeongdong), que ofrece opciones vegetarianas con tofu y abundantes guarniciones vegetales (banchan), o un restaurante de comida tradicional con guisos vegetarianos.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Day 4 -->
+                <div class="timeline-day-card" data-day="4">
+                    <div class="day-badge">Day 4</div>
+                    <div class="day-header">
+                        <div class="day-title-area">
+                            <span class="day-date">Sep 29 (Tuesday)</span>
+                            <h3 class="lang-en">KTX to Ulsan Family House</h3>
+                            <h3 class="lang-es">KTX hacia la Casa Familiar en Ulsan</h3>
+                        </div>
+                        <div class="group-pill group-10">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="inline-icon"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" /></svg>
+                            <span class="lang-en">Group of 10</span>
+                            <span class="lang-es">Grupo de 10</span>
+                        </div>
+                        <button class="accordion-toggle" aria-label="Toggle Details"></button>
+                    </div>
+                    <div class="day-body">
+                        <div class="itinerary-grid">
+                            <div class="time-block">
+                                <div class="time">10:30</div>
+                                <div class="event-details">
+                                    <h4 class="lang-en">KTX High-Speed Train from Seoul Station</h4>
+                                    <h4 class="lang-es">Tren KTX de Alta Velocidad desde la Estación de Seúl</h4>
+                                    <p class="lang-en">Take the KTX Train (scheduled between 10:00 and 11:00 AM) to Ulsan Station (approx. 2h 15m). Sit back and enjoy the scenic mountain countryside.</p>
+                                    <p class="lang-es">Tomamos el Tren KTX (previsto entre las 10:00 y las 11:00 AM) hacia la estación de Ulsan (aprox. 2h 15m). Relájate y disfruta del paisaje montañoso.</p>
+                                </div>
+                            </div>
+                            <div class="time-block">
+                                <div class="time">13:15</div>
+                                <div class="event-details">
+                                    <h4 class="lang-en">Arrive in Ulsan & Settle In</h4>
+                                    <h4 class="lang-es">Llegada a Ulsan e Instalación</h4>
+                                    <p class="lang-en">Arrive at Ulsan Station. Transfer to the family house in Ulsan where the wedding is based. Meet Leta's parents and brother. Unpack, settle in, and enjoy some refreshments together.</p>
+                                    <p class="lang-es">Llegada a la estación de Ulsan. Traslado a la casa de la familia de Leta en Ulsan, nuestra base. Encuentro con los padres y el hermano de Leta. Deshacer maletas y tomar un refrigerio juntos.</p>
+                                </div>
+                            </div>
+                            <div class="time-block">
+                                <div class="time">15:00</div>
+                                <div class="event-details">
+                                    <h4 class="lang-en">Collect Parents' Cars & Local Drive</h4>
+                                    <h4 class="lang-es">Preparar los Coches de los Padres y Paseo Local</h4>
+                                    <p class="lang-en">Get familiar with the <strong>2 cars provided by Leta's parents</strong>. We will drive them for all our regional day trips (no rental cars needed!). Go for a short test run to get groceries or coffee.</p>
+                                    <p class="lang-es">Nos familiarizamos con los <strong>2 coches prestados por los padres de Leta</strong>. Los usaremos para todas nuestras excursiones regionales (¡sin alquileres!). Hacemos un trayecto de prueba corto para comprar comida o café.</p>
+                                </div>
+                            </div>
+                            <div class="time-block">
+                                <div class="time">18:00</div>
+                                <div class="event-details">
+                                    <h4 class="lang-en">Taehwagang National Garden Bamboo Forest</h4>
+                                    <h4 class="lang-es">Bosque de Bambú de Taehwagang</h4>
+                                    <p class="lang-en">Enjoy a family dinner in Ulsan, then visit the local river bamboo grove. Walk the 4km path illuminated with "Milky Way" LED lights at night—a beautiful and relaxing evening for the parents.</p>
+                                    <p class="lang-es">Cena familiar en Ulsan y luego visita al bosque de bambú local. Recorrido a pie iluminado por luces LED estilo "Vía Láctea", un paseo precioso y muy relajante para los padres.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Day 5 -->
+                <div class="timeline-day-card" data-day="5">
+                    <div class="day-badge">Day 5</div>
+                    <div class="day-header">
+                        <div class="day-title-area">
+                            <span class="day-date">Sep 30 (Wednesday)</span>
+                            <h3 class="lang-en">Day Trip: Gyeongju (Ancient Capital)</h3>
+                            <h3 class="lang-es">Excursión: Gyeongju (Capital Antigua)</h3>
+                        </div>
+                        <div class="group-pill group-10">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="inline-icon"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" /></svg>
+                            <span class="lang-en">Group of 10 • 2 Cars</span>
+                            <span class="lang-es">Grupo de 10 • 2 Coches</span>
+                        </div>
+                        <button class="accordion-toggle" aria-label="Toggle Details"></button>
+                    </div>
+                    <div class="day-body">
+                        <div class="itinerary-grid">
+                            <div class="time-block">
+                                <div class="time">09:00</div>
+                                <div class="event-details">
+                                    <h4 class="lang-en">Drive Ulsan ➔ Gyeongju (45 mins)</h4>
+                                    <h4 class="lang-es">Conducción Ulsan ➔ Gyeongju (45 min)</h4>
+                                    <p class="lang-en">Drive north in our 2 family cars. Park at Bulguksa Temple, a scenic mountain temple showcasing classic Silla Dynasty stone arches.</p>
+                                    <p class="lang-es">Conducimos al norte en nuestros 2 coches familiares. Aparcamos en el Templo Bulguksa, un precioso monasterio budista de la dinastía Silla.</p>
+                                </div>
+                            </div>
+                            <div class="time-block">
+                                <div class="time">12:00</div>
+                                <div class="event-details">
+                                    <h4 class="lang-en">Lunch on Hwangnidang-gil</h4>
+                                    <h4 class="lang-es">Almuerzo en Hwangnidang-gil</h4>
+                                    <p class="lang-en">Explore the trendy street of Hanok boutiques and cafes.
+                                        <br><strong>🌱 Sister-Vegetarian Pick:</strong> Try <strong>Sukyoung Sikdang</strong> (famous for barley bibimbap, order without beef) or stop at any of the trendy organic cafes for tofu/vegetable bowls.
+                                    </p>
+                                    <p class="lang-es">Paseo por la calle de moda con tiendas y cafés tradicionales Hanok.
+                                        <br><strong>🌱 Opción Vegetariana:</strong> Recomendamos <strong>Sukyoung Sikdang</strong> (famoso por su bibimbap de cebada, pedir sin carne de ternera) o cualquiera de las cafeterías orgánicas con boles vegetales.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="time-block">
+                                <div class="time">14:30</div>
+                                <div class="event-details">
+                                    <h4 class="lang-en">Daereungwon Royal Tombs & Cheomseongdae</h4>
+                                    <h4 class="lang-es">Tumbas Reales Daereungwon y Cheomseongdae</h4>
+                                    <p class="lang-en">Walk among the giant grassy burial mounds of ancient kings. Stroll over to the stone observatory tower nearby. Very flat and easy walking for parents.</p>
+                                    <p class="lang-es">Paseo entre los gigantescos montículos verdes donde descansaban los reyes de Silla. Cruzamos a pie hacia la torre astronómica de piedra. Recorrido muy plano y fácil para los padres.</p>
+                                </div>
+                            </div>
+                            <div class="time-block">
+                                <div class="time">18:00</div>
+                                <div class="event-details">
+                                    <h4 class="lang-en">Woljeong Bridge & Wolji Pond Lights</h4>
+                                    <h4 class="lang-es">Puente Woljeong y Estanque Wolji de Noche</h4>
+                                    <p class="lang-en">Walk across the grand wooden Woljeong Bridge, then drive to Donggung Palace and Wolji Pond to watch the pavilions lit up beautifully over the lake.</p>
+                                    <p class="lang-es">Cruzamos el gran puente de madera Woljeong, y luego conducimos al Palacio Donggung y el estanque Wolji para contemplar los pabellones iluminados reflejándose en el agua.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Day 6 -->
+                <div class="timeline-day-card" data-day="6">
+                    <div class="day-badge">Day 6</div>
+                    <div class="day-header">
+                        <div class="day-title-area">
+                            <span class="day-date">Oct 1 (Thursday)</span>
+                            <h3 class="lang-en">Day Trip: Coastal Busan</h3>
+                            <h3 class="lang-es">Excursión: Costa de Busan</h3>
+                        </div>
+                        <div class="group-pill group-10">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="inline-icon"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" /></svg>
+                            <span class="lang-en">Group of 10 • 2 Cars</span>
+                            <span class="lang-es">Grupo de 10 • 2 Coches</span>
+                        </div>
+                        <button class="accordion-toggle" aria-label="Toggle Details"></button>
+                    </div>
+                    <div class="day-body">
+                        <div class="itinerary-grid">
+                            <div class="time-block">
+                                <div class="time">09:00</div>
+                                <div class="event-details">
+                                    <h4 class="lang-en">Drive Ulsan ➔ East Busan (1h)</h4>
+                                    <h4 class="lang-es">Conducción Ulsan ➔ Este de Busan (1h)</h4>
+                                    <p class="lang-en">Drive south to Haedong Yonggungsa Temple, a spectacular Buddhist temple built directly onto the rugged ocean cliffs.</p>
+                                    <p class="lang-es">Conducción al sur hacia el Templo Haedong Yonggungsa, un impresionante monasterio budista construido directamente sobre acantilados rocosos frente al mar.</p>
+                                </div>
+                            </div>
+                            <div class="time-block">
+                                <div class="time">12:00</div>
+                                <div class="event-details">
+                                    <h4 class="lang-en">Lunch at Haeundae Beach</h4>
+                                    <h4 class="lang-es">Almuerzo en la Playa de Haeundae</h4>
+                                    <p class="lang-en">Enjoy a stroll along the famous Haeundae beach.
+                                        <br><strong>🌱 Sister-Vegetarian Pick:</strong> Try a delicious vegetarian lunch at a local noodle house or enjoy temple food styles. Look for cold wheat noodles (Milmyeon) ordering without beef/egg toppings.
+                                    </p>
+                                    <p class="lang-es">Paseo por la famosa playa de Haeundae.
+                                        <br><strong>🌱 Opción Vegetariana:</strong> Recomendamos fideos en un restaurante local o arroz con verduras. Prueba los fideos fríos de trigo (Milmyeon) pidiéndolos sin ternera ni huevo.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="time-block">
+                                <div class="time">14:00</div>
+                                <div class="event-details">
+                                    <h4 class="lang-en">Haeundae Blue Line Park train</h4>
+                                    <h4 class="lang-es">Tren de Haeundae Blue Line Park</h4>
+                                    <p class="lang-en">Board the Beach Train or the cute, elevated Haeundae Sky Capsule (booking in advance is a must!) for a slow coastal ride overlooking the sea cliffs.</p>
+                                    <p class="lang-es">Subimos al tren de la playa o a las cabinas elevadas Sky Capsule (¡reserva anticipada imprescindible!) para un viaje costero panorámico lento sobre el mar.</p>
+                                </div>
+                            </div>
+                            <div class="time-block">
+                                <div class="time">18:00</div>
+                                <div class="event-details">
+                                    <h4 class="lang-en">Sunset & Bridge Lights at Gwangalli Beach</h4>
+                                    <h4 class="lang-es">Atardecer y Luces del Puente en la Playa Gwangalli</h4>
+                                    <p class="lang-en">Drive to Gwangalli Beach. Dine at a seafront restaurant and watch the magnificent Gwangan Bridge light up with beautiful colors.</p>
+                                    <p class="lang-es">Conducimos a la playa de Gwangalli. Cenamos frente al mar observando el icónico puente Gwangan iluminarse con colores cambiantes.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Day 7 -->
+                <div class="timeline-day-card wedding-highlight" data-day="7">
+                    <div class="day-badge">Day 7</div>
+                    <div class="day-header">
+                        <div class="day-title-area">
+                            <span class="day-date">Oct 2 (Friday)</span>
+                            <h3 class="lang-en">Wedding Rehearsal (Ulsan)</h3>
+                            <h3 class="lang-es">Ensayo de la Boda (Ulsan)</h3>
+                        </div>
+                        <div class="group-pill group-wedding">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="inline-icon"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" /></svg>
+                            <span class="lang-en">Wedding Event</span>
+                            <span class="lang-es">Evento de Boda</span>
+                        </div>
+                        <button class="accordion-toggle" aria-label="Toggle Details"></button>
+                    </div>
+                    <div class="day-body">
+                        <div class="itinerary-grid">
+                            <div class="time-block">
+                                <div class="time">10:00</div>
+                                <div class="event-details">
+                                    <h4 class="lang-en">Wedding Ceremony Rehearsal</h4>
+                                    <h4 class="lang-es">Ensayo de la Ceremonia</h4>
+                                    <p class="lang-en">Walkthrough at the wedding venue in Ulsan. Sound checks, decoration alignment, and final dress/tux fittings.</p>
+                                    <p class="lang-es">Ensayo general en el salón de bodas en Ulsan. Pruebas de sonido, revisión de decoración y últimos ajustes de ropa.</p>
+                                </div>
+                            </div>
+                            <div class="time-block">
+                                <div class="time">14:00</div>
+                                <div class="event-details">
+                                    <h4 class="lang-en">Afternoon Relax</h4>
+                                    <h4 class="lang-es">Tarde de Descanso</h4>
+                                    <p class="lang-en">Free time to rest, steam/iron formal wear, or prepare speeches. Parents can relax at the family house.</p>
+                                    <p class="lang-es">Tiempo libre para descansar, planchar la ropa formal o repasar los discursos. Los padres descansan en la casa familiar.</p>
+                                </div>
+                            </div>
+                            <div class="time-block">
+                                <div class="time">18:00</div>
+                                <div class="event-details">
+                                    <h4 class="lang-en">Combined Family Dinner (Both Sides)</h4>
+                                    <h4 class="lang-es">Cena de las Dos Familias Unidas</h4>
+                                    <p class="lang-en">A special joint dinner for Ruben's family and Leta's family. A warm, intimate evening to get to know each other and share toast speeches.</p>
+                                    <p class="lang-es">Una cena especial conjunta para la familia de Rubén y la familia de Leta. Una velada íntima y cálida para conocerse mejor y realizar los brindis.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Day 8 -->
+                <div class="timeline-day-card wedding-highlight" data-day="8">
+                    <div class="day-badge">Day 8</div>
+                    <div class="day-header">
+                        <div class="day-title-area">
+                            <span class="day-date">Oct 3 (Saturday)</span>
+                            <h3 class="lang-en">The Wedding Day!</h3>
+                            <h3 class="lang-es">¡El Día de la Boda!</h3>
+                        </div>
+                        <div class="group-pill group-wedding">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="inline-icon"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" /></svg>
+                            <span class="lang-en">Wedding Event</span>
+                            <span class="lang-es">Evento de Boda</span>
+                        </div>
+                        <button class="accordion-toggle" aria-label="Toggle Details"></button>
+                    </div>
+                    <div class="day-body">
+                        <div class="itinerary-grid">
+                            <div class="time-block">
+                                <div class="time">Morning</div>
+                                <div class="event-details">
+                                    <h4 class="lang-en">Salon Hair & Makeup</h4>
+                                    <h4 class="lang-es">Peluquería y Maquillaje</h4>
+                                    <p class="lang-en">Bride, Groom, and parents head to the salon early for professional hair, makeup styling, and formal dressing.</p>
+                                    <p class="lang-es">La novia, el novio y los padres van temprano al salón para peinado, maquillaje profesional y vestimenta formal.</p>
+                                </div>
+                            </div>
+                            <div class="time-block">
+                                <div class="time">Afternoon</div>
+                                <div class="event-details">
+                                    <h4 class="lang-en">Wedding Ceremony in Ulsan</h4>
+                                    <h4 class="lang-es">Ceremonia de Boda en Ulsan</h4>
+                                    <p class="lang-en">The grand celebration of our union! Bows of respect to the families, ring exchanges, and photo sessions. (Note: Oct 3 is also National Foundation Day, a public holiday in Korea!).</p>
+                                    <p class="lang-es">¡La gran celebración de nuestra unión! Reverencias de respeto a las familias, intercambio de anillos y sesión de fotos. (Nota: ¡El 3 de Octubre es el Día de la Fundación Nacional, festivo oficial en Corea!).</p>
+                                </div>
+                            </div>
+                            <div class="time-block">
+                                <div class="time">Evening</div>
+                                <div class="event-details">
+                                    <h4 class="lang-en">Banquet & Celebrations</h4>
+                                    <h4 class="lang-es">Banquete y Celebración</h4>
+                                    <p class="lang-en">Enjoy a delicious wedding banquet feast with both families, cut the cake, toast with champagne, and celebrate into the night!</p>
+                                    <p class="lang-es">¡Disfruta del delicioso banquete de bodas con ambas familias, corte de tarta, brindis con champán y celebración hasta la noche!</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Day 9 -->
+                <div class="timeline-day-card" data-day="9">
+                    <div class="day-badge">Day 9</div>
+                    <div class="day-header">
+                        <div class="day-title-area">
+                            <span class="day-date">Oct 4 (Sunday)</span>
+                            <h3 class="lang-en">Post-Wedding Relax / Day Trip</h3>
+                            <h3 class="lang-es">Post-Boda: Descanso o Excursión</h3>
+                        </div>
+                        <div class="group-pill group-10">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="inline-icon"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" /></svg>
+                            <span class="lang-en">Group of 10 • 2 Cars</span>
+                            <span class="lang-es">Grupo de 10 • 2 Coches</span>
+                        </div>
+                        <button class="accordion-toggle" aria-label="Toggle Details"></button>
+                    </div>
+                    <div class="day-body">
+                        <div class="itinerary-grid">
+                            <div class="time-block">
+                                <div class="time">10:30</div>
+                                <div class="event-details">
+                                    <h4 class="lang-en">Option A: Ulsan Nature Drive (Recommended)</h4>
+                                    <h4 class="lang-es">Opción A: Paseo Natural en Ulsan (Recomendado)</h4>
+                                    <p class="lang-en">A relaxed local day trip. Drive to **Daewangam Park** in Ulsan. Walk the pine forests, cross the high suspension bridge over the sea, and walk on paths around the jagged orange dragon-shaped ocean rocks. Very scenic and close to the house.</p>
+                                    <p class="lang-es">Una excursión local muy relajada. Conducimos a **Daewangam Park** en Ulsan. Paseo entre pinos centenarios, cruzamos el puente colgante sobre el mar y recorremos las pasarelas sobre rocas de color naranja. Paisaje precioso y muy cerca de casa.</p>
+                                </div>
+                            </div>
+                            <div class="time-block">
+                                <div class="time">11:00</div>
+                                <div class="event-details">
+                                    <h4 class="lang-en">Option B: Gamcheon Village & Fish Market (Busan)</h4>
+                                    <h4 class="lang-es">Opción B: Gamcheon Village y Mercado (Busan)</h4>
+                                    <p class="lang-en">Drive to Gamcheon Culture Village in West Busan (approx. 1h 20m drive). Walk around the colorful hillside houses and narrow lanes. Later, visit the famous Jagalchi Fish Market.</p>
+                                    <p class="lang-es">Conducimos al colorido Gamcheon Culture Village en el oeste de Busan (aprox. 1h 20m de coche). Paseo por las laderas pintorescas y callejones artísticos. Luego visitamos el famoso mercado de pescado Jagalchi.</p>
+                                </div>
+                            </div>
+                            <div class="time-block">
+                                <div class="time">18:00</div>
+                                <div class="event-details">
+                                    <h4 class="lang-en">Farewell Dinner</h4>
+                                    <h4 class="lang-es">Cena de Despedida</h4>
+                                    <p class="lang-en">Conclude this wonderful wedding family journey with a cozy farewell dinner at the Ulsan house or a local restaurant, sharing favorite photos and memories.</p>
+                                    <p class="lang-es">Concluimos este maravilloso viaje familiar de boda con una acogedora cena de despedida en la casa de Ulsan o un restaurante local, compartiendo fotos y recuerdos.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION: DAY TRIPS DETAIL -->
+        <section id="daytrips" class="tab-content">
+            <div class="section-header">
+                <h2 class="lang-en">Explore Regional Gems</h2>
+                <h2 class="lang-es">Explora Joyas Regionales</h2>
+                <p class="section-lead lang-en">Since we are basing ourselves at the house in Ulsan, we can take direct car trips in our family cars to these iconic nearby cities.</p>
+                <p class="section-lead lang-es">Como nos alojaremos en la casa de Ulsan, podemos hacer excursiones de un día en nuestros coches familiares a estas icónicas ciudades cercanas.</p>
+            </div>
+
+            <!-- Destination Tabs -->
+            <div class="dest-tabs">
+                <button class="dest-tab active" data-dest="gyeongju">Gyeongju (🚗 45m)</button>
+                <button class="dest-tab" data-dest="busan">Busan (🚗 1h - 1h 20m)</button>
+                <button class="dest-tab" data-dest="ulsan">Ulsan Local (🚗 15-30m)</button>
+            </div>
+
+            <!-- GYEONGJU DETAILS -->
+            <div id="dest-gyeongju" class="dest-content active">
+                <div class="dest-grid">
+                    <div class="dest-info">
+                        <h3 class="lang-en">Gyeongju: The Ancient Museum Without Walls</h3>
+                        <h3 class="lang-es">Gyeongju: El Museo Sin Paredes</h3>
+                        <p class="lang-en">Capital of the ancient Silla Kingdom for nearly 1,000 years. The entire city is dotted with royal tomb mounds, palaces, temples, and historical treasures. Perfect for a family culture walk.</p>
+                        <p class="lang-es">Capital del antiguo reino de Silla durante casi 1,000 años. Toda la ciudad está salpicada de túmulos reales, palacios, templos y tesoros históricos. Perfecto para un paseo cultural en familia.</p>
+                        
+                        <ul class="highlight-list">
+                            <li>
+                                <strong class="lang-en">Bulguksa Temple:</strong>
+                                <strong class="lang-es">Templo Bulguksa:</strong>
+                                <span class="lang-en">A breathtaking mountain temple showcasing masterful stone work and wooden craftsmanship from the 8th century. Very peaceful in the morning.</span>
+                                <span class="lang-es">Un impresionante templo de montaña con arcos de piedra del siglo VIII. Muy tranquilo y espiritual por la mañana.</span>
+                            </li>
+                            <li>
+                                <strong class="lang-en">Hwangnidang-gil:</strong>
+                                <strong class="lang-es">Hwangnidang-gil:</strong>
+                                <span class="lang-en">Contrast history with modern youth culture. A street of hanoks converted into vibrant photo studios, craft shops, tea houses, and cafes.</span>
+                                <span class="lang-es">Contraste entre historia y modernidad. Una calle tradicional Hanok llena de cafeterías de moda, estudios fotográficos y tiendas.</span>
+                            </li>
+                            <li>
+                                <strong class="lang-en">Daereungwon & Cheomseongdae:</strong>
+                                <strong class="lang-es">Tumbas Daereungwon y Cheomseongdae:</strong>
+                                <span class="lang-en">Safe, flat grass walkways ideal for parents and couples. You can walk through the tomb complex and see the famous astronomical tower.</span>
+                                <span class="lang-es">Senderos planos sobre césped ideales para caminar con los padres. Se puede pasear por el complejo de tumbas reales y ver la famosa torre astronómica de piedra.</span>
+                            </li>
+                            <li>
+                                <strong class="lang-en">Donggung Palace & Wolji Pond:</strong>
+                                <strong class="lang-es">Palacio Donggung y Estanque Wolji:</strong>
+                                <span class="lang-en">Do not miss this after dark! The reflection of illuminated ancient royal halls on the pond is one of Korea's most famous night scenes.</span>
+                                <span class="lang-es">¡Imprescindible de noche! El reflejo de los pabellones reales iluminados sobre las aguas del lago es una de las estampas nocturnas más famosas de Corea.</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="dest-logistics">
+                        <div class="logistics-card">
+                            <h4 class="lang-en">Logistics Quick-Facts</h4>
+                            <h4 class="lang-es">Datos Logísticos Rápidos</h4>
+                            <p><strong>Distance:</strong> ~45 km north of Ulsan.</p>
+                            <p class="lang-en"><strong>Driving Time:</strong> 40-45 minutes. Roads are broad and well-marked.</p>
+                            <p class="lang-es"><strong>Tiempo de Conducción:</strong> 40-45 minutos. Carreteras amplias y bien señalizadas.</p>
+                            <p class="lang-en"><strong>Parking:</strong> Large public parking lot at Bulguksa. For Hwangnidang-gil/tombs, use the public Gyeongju City Office parking or nearby paid lots (expect weekends to be busy).</p>
+                            <p class="lang-es"><strong>Aparcamiento:</strong> Parking grande público en Bulguksa. Para Hwangnidang-gil, usa el parking del Ayuntamiento de Gyeongju o parkings de pago cercanos.</p>
+                            <p class="lang-en"><strong>🌱 Vegetarian Food Pick:</strong> <em>Sanchae Bibimbap</em> (rice with mountain herbs and vegetables) at <strong>Sukyoung Sikdang</strong>. Order without fried egg/beef.</p>
+                            <p class="lang-es"><strong>🌱 Opción Vegetariana:</strong> <em>Sanchae Bibimbap</em> (arroz con vegetales de montaña) en <strong>Sukyoung Sikdang</strong>. Pedir sin huevo frito ni carne.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- BUSAN DETAILS -->
+            <div id="dest-busan" class="dest-content">
+                <div class="dest-grid">
+                    <div class="dest-info">
+                        <h3 class="lang-en">Busan: Dynamic Coastlines & Seafood Feast</h3>
+                        <h3 class="lang-es">Busan: Playas Dinámicas y Vistas al Mar</h3>
+                        <p class="lang-en">Korea's second-biggest metropolis, known for its dramatic coastlines, sweeping beaches, and bustling port markets. Because Busan is large, we have split it into two options to avoid heavy traffic.</p>
+                        <p class="lang-es">La segunda metrópolis más grande de Corea, famosa por sus costas, playas amplias y mercados activos. Al ser muy grande, la dividimos en dos opciones para evitar atascos.</p>
+                        
+                        <div class="route-options-grid">
+                            <div class="route-option">
+                                <h5 class="lang-en">Option A: The Scenic Coastal Route (East Busan)</h5>
+                                <h5 class="lang-es">Opción A: Ruta Costera Paisajística (Este de Busan)</h5>
+                                <p class="lang-en"><strong>Highlights:</strong> Haedong Yonggungsa Temple (cliffside by the sea), Haeundae Beach stroll, Haeundae Blue Line Park sky capsules (retro small cabins that crawl along the sea cliffs), and Gwangalli Beach lights.</p>
+                                <p class="lang-es"><strong>Puntos clave:</strong> Templo Haedong Yonggungsa (en un acantilado marino), playa de Haeundae, trenes o cabinas Sky Capsule de Blue Line Park (reserva previa) y las luces de la playa de Gwangalli.</p>
+                                <p class="lang-en"><strong>Drive:</strong> ~1 hour from Ulsan via the Busan-Ulsan Expressway. Highly accessible.</p>
+                                <p class="lang-es"><strong>Trayecto:</strong> ~1 hora desde Ulsan por autopista. Muy cómodo.</p>
+                            </div>
+                            <div class="route-option">
+                                <h5 class="lang-en">Option B: The Cultural Route (West/Central Busan)</h5>
+                                <h5 class="lang-es">Opción B: Ruta Cultural (Oeste de Busan)</h5>
+                                <p class="lang-en"><strong>Highlights:</strong> Gamcheon Culture Village (colorfully painted hillside houses, narrow stairways, street art), Jagalchi Fish Market (buying fresh crabs/fish and eating them on the spot), and BIFF Square shopping.</p>
+                                <p class="lang-es"><strong>Puntos clave:</strong> Gamcheon Culture Village (casas de colores en la ladera, pasadizos con arte urbano), mercado de pescado Jagalchi y las compras en BIFF Square.</p>
+                                <p class="lang-en"><strong>Drive:</strong> ~1 hour 20 mins. Narrow hilly roads in Gamcheon, so drive carefully!</p>
+                                <p class="lang-es"><strong>Trayecto:</strong> ~1 hora 20 minutos. Calles muy empinadas en Gamcheon, conducir con precaución.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="dest-logistics">
+                        <div class="logistics-card">
+                            <h4 class="lang-en">Logistics Quick-Facts</h4>
+                            <h4 class="lang-es">Datos Logísticos Rápidos</h4>
+                            <p><strong>Distance:</strong> ~60-70 km south of Ulsan.</p>
+                            <p class="lang-en"><strong>Driving & Traffic:</strong> Rush hour (8 AM-9:30 AM, 5:30 PM-7 PM) inside Busan can be congested. We recommend departing Ulsan around 9:00 AM.</p>
+                            <p class="lang-es"><strong>Tráfico:</strong> Las horas puntas en Busan sufren retenciones. Recomendamos salir de Ulsan sobre las 09:00 AM.</p>
+                            <p class="lang-en"><strong>Tolls:</strong> The Ulsan-Busan expressway has toll booths (~₩4,500). Ensure the cars have active Hi-Pass cards, or prepare cash/credit card at the manual lanes.</p>
+                            <p class="lang-es"><strong>Peajes:</strong> La autopista tiene cabinas de peaje (~₩4,500). Los coches de los suegros tendrán tarjetas Hi-Pass; si no, entra por el carril de pago manual.</p>
+                            <p class="lang-en"><strong>🌱 Vegetarian Food Pick:</strong> Enjoy buckwheat cold noodles (Milmyeon) or soft tofu stews (Sundubu-jjigae - ask for "gogi-eopsi, haemul-eopsi" - no meat, no seafood) in the Haeundae area.</p>
+                            <p class="lang-es"><strong>🌱 Opción Vegetariana:</strong> Disfruta de fideos fríos de trigo (Milmyeon) o guisos de tofu suave (Sundubu-jjigae - pedir "gogi eopsi, haemul eopsi", sin carne ni marisco) en Haeundae.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ULSAN DETAILS -->
+            <div id="dest-ulsan" class="dest-content">
+                <div class="dest-grid">
+                    <div class="dest-info">
+                        <h3 class="lang-en">Ulsan: Under-rated Coastal & Forest Splendor</h3>
+                        <h3 class="lang-es">Ulsan: Naturaleza, Costa y Bosques</h3>
+                        <p class="lang-en">Our wedding base! While Ulsan is known as an industrial giant, it actually boasts some of the most beautiful nature parks and scenic coastal walks in South Korea. Very close to the house, perfect for short trips.</p>
+                        <p class="lang-es">¡Nuestra base de bodas! Aunque es famosa por su industria, Ulsan esconde parques naturales y paseos marinos espectaculares. Al estar al lado de casa, es perfecto para tardes tranquilas.</p>
+                        
+                        <ul class="highlight-list">
+                            <li>
+                                <strong class="lang-en">Daewangam Park:</strong>
+                                <strong class="lang-es">Parque Daewangam:</strong>
+                                <span class="lang-en">Walk through a forest of 15,000 century-old pine trees to reach the rocky shore. Cross a metal suspension bridge to reach Daewangam Island, where ancient legends say a Silla Queen was buried beneath the dragon-shaped rocks to protect the sea.</span>
+                                <span class="lang-es">Pasea por un bosque de 15,000 pinos centenarios hasta la costa rocosa. Cruza el gran puente colgante metálico sobre el mar hasta la isla de Daewangam, asociada a leyendas reales de dragones.</span>
+                            </li>
+                            <li>
+                                <strong class="lang-en">Taehwagang National Garden:</strong>
+                                <strong class="lang-es">Jardín Nacional Taehwagang:</strong>
+                                <span class="lang-en">A gorgeous ecological park. Walk the legendary 4-kilometer path through the towering bamboo forest. At night, it's lit up to look like the starry night sky.</span>
+                                <span class="lang-es">Un precioso parque ecológico. Recorre el sendero de 4km rodeado de gigantescas cañas de bambú, iluminadas de noche simulando un cielo estrellado de Vía Láctea.</span>
+                            </li>
+                            <li>
+                                <strong class="lang-en">Ganjeolgot Cape:</strong>
+                                <strong class="lang-es">Cabo Ganjeolgot:</strong>
+                                <span class="lang-en">The easternmost point of the Korean peninsula. It is the very first place to see the sunrise in Korea. Famous for a giant windmill, a lighthouse, and a massive 5-meter tall mailbox where you can post real letters.</span>
+                                <span class="lang-es">El punto más al este de la península. Es el primer lugar donde amanece en todo el país. Famoso por su molino de viento gigante y un buzón de correos de 5 metros donde puedes enviar cartas reales.</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="dest-logistics">
+                        <div class="logistics-card">
+                            <h4 class="lang-en">Logistics Quick-Facts</h4>
+                            <h4 class="lang-es">Datos Logísticos Rápidos</h4>
+                            <p><strong>Distance:</strong> All within 15-30 mins of the house.</p>
+                            <p class="lang-en"><strong>Driving:</strong> Very easy. Local traffic is light outside of shift changes at the major industrial plants.</p>
+                            <p class="lang-es"><strong>Conducción:</strong> Muy fácil. El tráfico local es ligero fuera de los turnos de las fábricas navales o de coches.</p>
+                            <p class="lang-en"><strong>🌱 Vegetarian Food Pick:</strong> <em>Eonyang Bulgogi</em> is Ulsan's beef specialty, but you can find amazing vegetarian temple food at restaurants near Tongdosa Temple (located just west of Ulsan), serving mountain roots, sesame stews, and seasoned wild greens.</p>
+                            <p class="lang-es"><strong>🌱 Opción Vegetariana:</strong> La especialidad local es de carne (Bulgogi), pero puedes encontrar deliciosa comida budista vegetariana de templo cerca del cercano Templo Tongdosa (al oeste de Ulsan), a base de raíces de montaña, guisos de sésamo y hierbas silvestres sazonadas.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION: VEHICLE ALLOCATOR -->
+        <section id="vehicles" class="tab-content">
+            <div class="section-header">
+                <h2 class="lang-en">Vehicle Assignment Tool</h2>
+                <h2 class="lang-es">Asignación de Asientos</h2>
+                <p class="section-lead lang-en">We have 10 people and 2 family cars (provided by Leta's parents). Drag or click names to distribute everyone comfortably between Car 1 and Car 2.</p>
+                <p class="section-lead lang-es">Tenemos 10 personas y los 2 coches de los padres de Leta. Arrastra o pulsa sobre los nombres para distribuirlos cómodamente entre el Coche 1 y el Coche 2.</p>
+            </div>
+
+            <div class="allocator-container">
+                <!-- Roster of People -->
+                <div class="roster-panel">
+                    <h3 class="lang-en">Family Roster</h3>
+                    <h3 class="lang-es">Lista de Familiares</h3>
+                    <p class="panel-desc lang-en">Click a name to assign it, or drag them between cars.</p>
+                    <p class="panel-desc lang-es">Pulsa sobre un nombre para moverlo, o arrástralo entre coches.</p>
+                    <div id="roster" class="roster-grid">
+                        <!-- Filled by JS -->
+                    </div>
+                    <div class="roster-actions">
+                        <button id="resetCarsBtn" class="btn btn-outline">
+                            <span class="lang-en">Reset to Default</span>
+                            <span class="lang-es">Restablecer</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Cars Layout -->
+                <div class="cars-panel">
+                    <!-- Car 1 -->
+                    <div class="car-card" id="car-1" data-car="1">
+                        <div class="car-header">
+                            <div class="car-title">
+                                <h4>Car 1</h4>
+                                <span class="car-capacity" id="car1-capacity">0 / 5 Seats</span>
+                            </div>
+                            <span class="badge badge-young lang-en">Active Group</span>
+                            <span class="badge badge-young lang-es">Grupo Joven</span>
+                        </div>
+                        <div class="car-seats" id="car1-seats">
+                            <!-- Drag area -->
+                        </div>
+                    </div>
+
+                    <!-- Car 2 -->
+                    <div class="car-card" id="car-2" data-car="2">
+                        <div class="car-header">
+                            <div class="car-title">
+                                <h4>Car 2</h4>
+                                <span class="car-capacity" id="car2-capacity">0 / 5 Seats</span>
+                            </div>
+                            <span class="badge badge-parent lang-en">Senior Group</span>
+                            <span class="badge badge-parent lang-es">Grupo Padres</span>
+                        </div>
+                        <div class="car-seats" id="car2-seats">
+                            <!-- Drag area -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION: TRAVEL TIPS & KOREAN PHRASES -->
+        <section id="travelinfo" class="tab-content">
+            <div class="section-header">
+                <h2 class="lang-en">Practical Info & Vegetarian Guide</h2>
+                <h2 class="lang-es">Información Útil y Guía Vegetariana</h2>
+                <p class="section-lead lang-en">Important travel rules, survival phrases, and vegetarian dining tips for Ruben's sisters.</p>
+                <p class="section-lead lang-es">Normas de viaje básicas, frases de supervivencia y consejos de alimentación vegetariana para las hermanas de Rubén.</p>
+            </div>
+
+            <div class="info-grid">
+                <!-- Survival Phrases -->
+                <div class="info-card phrases-card">
+                    <h3 class="lang-en">🗣️ Korean Survival Phrases</h3>
+                    <h3 class="lang-es">🗣️ Frases Coreanas Básicas</h3>
+                    <p class="card-desc lang-en">Click any phrase to copy it to your clipboard. Show it to taxi drivers or servers!</p>
+                    <p class="card-desc lang-es">Pulsa sobre cualquier frase para copiarla al portapapeles. ¡Pruébala con taxistas o camareros!</p>
+                    <div class="phrase-search-container">
+                        <input type="text" id="phraseSearch" placeholder="Search / Buscar (e.g. hello, water, vegetarian)...">
+                    </div>
+                    <div class="phrases-list" id="phrasesList">
+                        <!-- Filled by JS -->
+                    </div>
+                </div>
+
+                <!-- Shared Packing Checklist -->
+                <div class="info-card checklist-card">
+                    <h3 class="lang-en">📋 Family Packing Checklist</h3>
+                    <h3 class="lang-es">📋 Lista de Equipaje Familiar</h3>
+                    <p class="card-desc lang-en">Check off items as you prepare. Your progress is saved automatically on this device.</p>
+                    <p class="card-desc lang-es">Marca los artículos a medida que preparas la maleta. Se guarda automáticamente en este dispositivo.</p>
+                    
+                    <div class="checklist-tabs">
+                        <button class="check-tab active" data-cat="essentials">
+                            <span class="lang-en">Essentials</span><span class="lang-es">Imprescindibles</span>
+                        </button>
+                        <button class="check-tab" data-cat="wedding">
+                            <span class="lang-en">Wedding</span><span class="lang-es">Boda</span>
+                        </button>
+                        <button class="check-tab" data-cat="tech">
+                            <span class="lang-en">Tech & Gear</span><span class="lang-es">Tecnología</span>
+                        </button>
+                    </div>
+
+                    <div class="checklist-items" id="checklistItems">
+                        <!-- Filled by JS -->
+                    </div>
+
+                    <div class="custom-item-adder">
+                        <input type="text" id="customCheckItem" placeholder="Add custom item / Añadir artículo...">
+                        <button id="addCheckItemBtn" class="btn btn-primary">Add</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Practical Driving & General Tips -->
+            <div class="general-tips-container">
+                <h3 class="lang-en">🚗 Essential Travel Rules in Korea</h3>
+                <h3 class="lang-es">🚗 Normas Clave para Viajar en Corea</h3>
+                <div class="tips-grid">
+                    <div class="tip-box">
+                        <h5 class="lang-en">Driving & Vehicles</h5>
+                        <h5 class="lang-es">Conducir y Vehículos</h5>
+                        <ul>
+                            <li class="lang-en"><strong>Right side:</strong> Cars drive on the right (same as Spain/Europe).</li>
+                            <li class="lang-es"><strong>Lado derecho:</strong> Se conduce por la derecha (igual que en España/Europa).</li>
+                            
+                            <li class="lang-en"><strong>International Permit:</strong> Both drivers must get an International Driving Permit (IDP) from Spain before flying. Bring your physical national license too.</li>
+                            <li class="lang-es"><strong>Permiso Internacional:</strong> Los conductores deben obtener el Permiso Internacional de Conducir (DGT) en España antes de volar. Traed también el carnet físico español.</li>
+                            
+                            <li class="lang-en"><strong>No Turn on Red:</strong> You must stop completely at a red light before making a right turn. Pedestrians always have absolute right of way.</li>
+                            <li class="lang-es"><strong>Giro en Rojo:</strong> La ley prohíbe girar a la derecha con semáforo en rojo sin parar completamente antes. Prioridad absoluta del peatón.</li>
+                        </ul>
+                    </div>
+                    <div class="tip-box">
+                        <h5 class="lang-en">Vegetarian Survival (Sisters)</h5>
+                        <h5 class="lang-es">Supervivencia Vegetariana</h5>
+                        <ul>
+                            <li class="lang-en"><strong>Hidden Ingredients:</strong> Traditional Korean broths often contain dried anchovies or beef bones. Kimchi almost always contains fermented fish sauce (Jeotgal).</li>
+                            <li class="lang-es"><strong>Ingredientes ocultos:</strong> Los caldos tradicionales suelen llevar base de anchoas secas o huesos de ternera. El Kimchi casi siempre lleva salsa de pescado fermentada (Jeotgal).</li>
+                            
+                            <li class="lang-en"><strong>How to order:</strong> Say "Gogi-neun 빼 juseyo" (No meat, please) or "Chaesik-juuija-yeyo" (I am vegetarian).</li>
+                            <li class="lang-es"><strong>Cómo pedir:</strong> Decid "Gogi-neun pae ju-se-yo" (Sin carne, por favor) o "Chaesik-juuija-yeyo" (Soy vegetariano/a).</li>
+                            
+                            <li class="lang-en"><strong>Safe Dishes:</strong> *Sanchae Bibimbap* (mountain vegetables and rice, ask for no beef), *Deulkke Kalguksu* (perilla seed noodle soup, check broth), and *Bindaetteok* (mung bean pancake).</li>
+                            <li class="lang-es"><strong>Platos seguros:</strong> *Sanchae Bibimbap* (arroz con verduras de montaña, pedir sin ternera), *Deulkke Kalguksu* (fideos en caldo espeso de sésamo/perilla, preguntar por el caldo) y *Bindaetteok* (tortitas de legumbres).</li>
+                        </ul>
+                    </div>
+                    <div class="tip-box">
+                        <h5 class="lang-en">Payments & KTX Train</h5>
+                        <h5 class="lang-es">Pagos y Tren KTX</h5>
+                        <ul>
+                            <li class="lang-en"><strong>KTX Ticket Window:</strong> Booking opens exactly **30 days in advance** (August 30 for your Sept 29 trip). Book early on the official Korail website or Korail Talk app to get 7 adjacent seats.</li>
+                            <li class="lang-es"><strong>Reserva de KTX:</strong> Los billetes se abren exactamente **30 días antes** (30 de Agosto para viajar el 29 de Sept). Reservad temprano en Korail Talk para conseguir asientos juntos para los 7.</li>
+                            
+                            <li class="lang-en"><strong>T-Money Card:</strong> Buy a transit card at convenience stores. You MUST charge it with cash (KRW) to use buses/subway in Seoul.</li>
+                            <li class="lang-es"><strong>Tarjeta T-Money:</strong> Tarjeta de transporte de venta en supermercados. DEBE recargarse con dinero en efectivo (Wons) para metro/buses.</li>
+                            
+                            <li class="lang-en"><strong>Cash Needs:</strong> Keep ₩50,000-₩100,000 cash for street food, T-Money top-ups, and traditional markets.</li>
+                            <li class="lang-es"><strong>Efectivo:</strong> Mantened ₩50,000-₩100,000 en efectivo para comida callejera, recargar T-Money y mercados tradicionales.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="app-footer">
+        <div class="footer-content">
+            <p class="footer-title">Happily Ever After in South Korea</p>
+            <p class="footer-names">Ruben & Leta • 2026</p>
+            <div class="footer-logo">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 50" fill="none" stroke="currentColor" stroke-width="3" class="knot-svg">
+                    <path d="M25 25 C10 5, 5 45, 25 25 C45 5, 55 45, 75 25 C95 5, 90 45, 75 25 C60 5, 40 45, 25 25 Z" />
+                </svg>
+            </div>
+            <button id="printItineraryBtn" class="btn btn-outline footer-print-btn">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="inline-icon"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z" /></svg>
+                <span class="lang-en">Print Itinerary (PDF)</span>
+                <span class="lang-es">Imprimir Itinerario (PDF)</span>
+            </button>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
